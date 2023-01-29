@@ -1,17 +1,27 @@
 import React from 'react';
 import PhotoEntry from './PhotoEntry';
+import entries from "./data/photo-entries.json";
 
 class AlbumMaker extends React.Component {
     render()
     {
+
+        var radius = 56;
+        const PI = 3.14;
+        debugger;
+        var area = radius ** 2 * PI;
+
+
+        console.log(entries);
         return(
             <div className="flex-container">
-                <PhotoEntry src="Berlin.jpg" location="Berlin, Germany" caption="Heart of Europe" /> 
-                <PhotoEntry src="Beverly-hills.jpg" location="Beverly Hills, USA" caption="Southern California"/> 
-                <PhotoEntry src="Maple-leaf.jpg" location="Toronto, Canada" caption="Autumn" /> 
-                <PhotoEntry src="San-francisco.jpg" location="San Francisco, USA" caption="Wanderlust" /> 
-                <PhotoEntry src="Kona.jpg" location="Kona, Hawaii, USA" caption="Deep Thought" /> 
-                <PhotoEntry src="London.jpg" location="London, UK" caption="Trafalgar Square" />
+                {/* <PhotoEntry src="Berlin.jpg" location="Berlin, Germany" caption="Heart of Europe" />  */}
+                {
+                    // * map will get every item in the entires list and loop through one by one by saving it to photo variable
+                    entries.itemlist.map((photo) => {
+                        return <PhotoEntry key={photo.src} src={photo.src} location={photo.location} caption={photo.caption}/>
+                    })
+                }
             </div>
         )
     }
