@@ -1,10 +1,11 @@
 import React from "react";
+import "./master.css"
 
 function BannerImage()
 {
     return(
         <div>
-            <img src="../images/banner.jpeg" alt="Banner" width={"100%"}/>
+            <img className="banner" src="../images/Banner.jpeg" alt="Banner" width={"100%"}/>
         </div>
     )
 }
